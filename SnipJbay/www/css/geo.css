@@ -1,0 +1,66 @@
+/* CSS Document */
+.button {
+  color:
+  rgba(128,0,64,1);
+  font-weight: bold;
+  background-color: rgba(128,0,64,1);
+  border:none;
+  height: 35px;
+  z-index: 999;
+	color: rgba(255,255,255,1);
+	font-family: Arial;
+	font-weight: bold;
+	background-color: rgba(144,30,121,1);
+	width: 50%;
+	left:25%;
+	position:relative;
+}
+
+
+.button:hover {
+	-moz-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	transform-origin: 50% 0;
+	z-index: 999;
+	color: rgba(255,255,255,1);
+	font-weight: bold;
+	background-color: rgba(144,30,121,1);
+	font-family: Arial;
+	font-size: 16px;
+ }	
+.Element {
+	top:100px;
+	}
+	
+.button2 {
+  color:
+  rgba(128,0,64,1);
+  font-weight: bold;
+  background-color: rgba(128,0,64,1);
+  border:none;
+  height: 35px;
+  z-index: 999;
+	color: rgba(255,255,255,1);
+	font-family: Arial;
+	font-weight: bold;
+	background-color: rgba(144,30,121,1);
+	width: 50%;
+	left:25%;
+	position:relative;
+}
+
+
+.button2:hover {
+	-moz-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	transform-origin: 50% 0;
+	z-index: 999;
+	color: rgba(255,255,255,1);
+	font-weight: bold;
+	background-color: rgba(144,30,121,1);
+	font-family: Arial;
+	font-size: 16px;
+ }	
+.Element2 {
+	top:430px;
+	}	

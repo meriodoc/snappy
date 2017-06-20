@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html>
+<head>
+<!--	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+-->      
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<style type="text/css">
+		#map-canvas {
+			height:500px;	
+			}
+	</style>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjxk1Mzkzd1KNvc52l-aVEMVTXELgLq-A&sensor=true">
+	src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjxk1Mzkzd1KNvc52l-aVEMVTXELgLq-A&callback=initMap">TRUE FOR MOBILE</script>
+<script type="text/javascript">
+	var map;
+	function initialise(location) {
+		
+			console.log(location);
+			var currentLocation =  new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+			var mapOptions = {
+				center: currentLocation, 
+  				zoom: 19,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+
+		map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+		
+		var marker= new google.maps.Marker({
+			position:currentLocation,
+			map: map 
+		});
+	}
+	
+	$(document).ready(function() {
+		navigator.geolocation.getCurrentPosition(initialise);
+		
+		});
+</script>
+<title>Geo snippety</title>
+</head>
+
+<body>
+	<div id="map-canvas"></div>
+    <div name="login" class="button"  id="login"><span id="login"><a href="snippy.html">Login</a></span></div>
+        </div>
+    
+<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+</body>
+</html>

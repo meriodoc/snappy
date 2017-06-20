@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link href="css/landing.css" rel="stylesheet" type="text/css">    
+<title> Quickspaza Landing Page</title>
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+h6 {
+	font-size: 9px;
+	color: rgba(144,30,121,1);
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: Arial;
+}
+h5 {
+	font-size: 12px;
+	color: rgba(144,30,121,1);
+}
+</style>
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+a:link {
+	color: rgba(255,255,255,1);
+}
+a:hover {
+	color: rgba(255,255,255,1);
+}
+</style>
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+
+<div class="Page" id="Page">
+  <div class="DoubleContainer" id="DCont">
+<!-- Start of first menu -->  
+		<div class="menu" id="TempMenu">
+			<ul id="MenuBar1" class="MenuBarHorizontal">
+  				<li><a class="MenuBarItemSubmenu" href="#"><img src="images/Header & Menu/mobile-nav-icon.png" alt="menuImage" name="Rotate" id="Rotate" tabindex="1"></a>
+    <ul>
+      <li><a href="home.html"><img src="images/Header & Menu/Home-35.png" alt="menuImage" width="25" height="25">&nbsp &nbsp &nbsp &nbsp Home</a></li>
+      <li><a href="hamper.html"><img src="images/Tabs/Hampers-50.png" alt="menuImage" width="25" height="25">&nbsp &nbsp &nbsp &nbsp Hampers</a></li>
+      <li><a href="products.html"><img src="images/Tabs/Products-50.png" alt="menuImage" width="25" height="25">&nbsp &nbsp &nbsp &nbsp Products</a></li>   
+<!-- SPECIAL MENU ITEM ..display only if there are existing specials else hide -->           
+      			<li><a href="specials.html"><img src="images/Header & Menu/Special-50.png" alt="menuImage" name="special" width="25" height="25" id="special">&nbsp &nbsp &nbsp &nbsp Specials</a></li>      
+<!-- GPS MENU ITEM If userid = Driver show else hide -->  
+				<li><a href="gps.html"><img src="images/Header & Menu/GPS-35.png" alt="menuImage" name="gps" width="25" height="25" id="gps">&nbsp &nbsp &nbsp &nbsp GPS</a></li>      
+      			<li><a href="#">&nbsp _________________ &nbsp</a></li>
+      <li><a href="logout.html"><img src="images/Header & Menu/Lock-50.png" alt="menuImage" width="25" height="25">&nbsp &nbsp &nbsp &nbsp Logout</a></li>
+    </ul>
+  </li>
+</ul> 
+
+<div class="QLogo" id="QLogo">                 
+<span class="QLogo"><img src="images/Header & Menu/Q-Logo-White.png" width="35" height="35" alt="QLogo"></span>
+</div> 
+<!--QLogo div -->              
+		  
+                    
+          <div class="HomeIcon" id="HomeIcon"><a href="home.html"><img src="images/Header & Menu/Home-35.png" width="35" height="35" alt="HomeIcon"></a>
+          </div> 
+                    <!--HomeIcon div -->
+<!-- SHARING -->                    
+                  
+          <div class="Share" id="#ShareQS" > <a href="#ShareQS"><img src="images/Header & Menu/Share-35.png" width="35" height="35" alt="Share"></a></div>
+          
+          
+<div class="modal" id="ShareQS">
+
+       	<div class="modal-container">
+        
+   <a href="landing.html" target="_parent" class="Close" id="close" role="button">X</a>  
+       	<br></br>
+        <p></p>
+        <br></br>
+        <p id="Paragraph">Share Quickspaza</p>
+		<p id="Paragraph">with a friend</p>
+        <br></br>
+<div class="Whatsapp" id="Whatsapp">
+       <!-- Whatsapp -->
+<a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share"><img src="images/Social Share/whatsappQS.png" alt="Share Quickspaza on Whatsapp" name="WA" width="50" height="50" class="WA" id="WA" /></a>
+<div><a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share"><span class="facebookText"><span class="WhatsAppText">WhatsApp</span></div> 
+  <br></br>
+  <p></p>           
+  </div> 
+  
+  
+ <div class="facebook" id="facebook">
+      <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=http://facebook.com/quickspaza/?fref=ts" target="_blank">
+        <img src="images/Social Share/facebookQS.png" alt="Facebook" />
+</a>
+<div class="facebookText"><a href="http://www.facebook.com/sharer.php?u=http://facebook.com/quickspaza/?fref=ts" target="_blank" class="facebookText"><span class="facebookText">Facebook</span></a></div> 
+  </div>
+            	
+            </div>
+          </div>
+         
+<!-- SHARING END -->          
+                      
+          <div class="Cartqs" id="cart"><a href="cart.html"><img src="images/Header & Menu/Cart-35.png" width="35" height="35" alt="Cartqs"></a>
+          </div> <!--Cart div -->
+<!-- LOGOUT LOCK-->                    
+		  <div class="Lock" id="#Lock"><a href="#Lock"><img src="images/Header & Menu/Lock-35.png" width="35" height="35" alt="Lock"></a>
+          </div> <!--Lock div -->
+          
+          <div class="logout" id="Lock">
+          	<div class="logout-container">
+        
+   <a href="landing.html" title="CloseLogout" target="_parent" class="CloseLogout" id="closelogout" role="button">X</a>    
+<!-- ***** Call logout Function JS ***** AND return to index-->   
+       	<br></br>
+    
+       
+        <p id="Paragraph">Are you sure</p>
+		<p id="Paragraph">you want to</p>
+        <p id="Paragraph">logout?</p>
+        <br></br>
+        <div class="LogoutConfirm" id="logoutconfirm">
+        <!-- Do Logout procedure and drop session  JS Write to Session logs then return to index page -->
+        	<div style="text: white;" class="YesLogout" id="yeslogout"><a href="index.html" style="color: rgba(255,255,255,1)">YES</a></div>
+        <!-- Do Not do Logout procedure and retain session JS-->    
+            <div class="NoLogout" id="nologout"><a href="landing.html" style="color: rgba(255,255,255,1)">NO</a></div>
+        </div>
+        	
+<!-- ***** Call logout Function JS ***** AND return to index-->              	
+            </div>
+          </div>
+<!-- LOGOUT LOCK FINISHED-->          
+          
+          
+		</div> <!--menu div -->
+<!-- End of first menu -->
+
+<!-- //////////////////////////////////////////////////////////////// -->
+
+<!-- Start of second menu --> 
+   	<div class="SecondMenu" id="secondmenu">
+	  <div class="Hamper" id="hamper"><a href="hamper.html"><img src="images/Tabs/Hampers-50.png" width="35" height="35" alt="Hamper"></a>
+	  </div> <!--Hamper div -->
+	  <div class="Products" id="products"><a href="products.html"><img src="images/Tabs/Products-50.png" width="40" height="40" alt="Products"></a>
+	  </div> <!--Products div -->
+                    <!--  Specials Page
+Note the Specials tab must only be visible if there are specials running for current date
+ -->
+      <div class="Special" id="special"><a href="specials.html"><img src="images/Tabs/Special-50.png" width="40" height="40" alt="special"></a>
+	  </div>	<!--Special div -->
+    </div> <!--SecondMenu div -->
+<!-- End of second menu -->            
+  </div> 
+  <!--DoubleContainer div -->
+  <div class="MessagePanel" id="messagepanel">
+    <p class="Jk"><span class="Jk">Message Panel</span></p>
+  </div> <!--Message Panel div -->
+  <!--Select from qs_message where validFrom >= currentdate and validTo <= currentdate and display in (‘All’,’Hamper’,’Hampers and Specials’)-->
+ 
+  <div class="ProdTable" id="productTable"><table width="100%
+  " border="1" align="center" id="prodTable">
+  <tr>
+    <td colspan="2" rowspan="3"><div class="imageContainer"><img src="images/ProdImages/Ham1.png" alt="Hamper1" width="150" class="ProdImage" style="vertical-align: middle;" align="center"></div class="imageDiv"></td>
+    <td width="80" id="$prodName"><h5><div class="ProdName">Hamper 1</div></h5></td>
+    <td width="35">&nbsp;</td>
+    <td width="32">&nbsp;</td>
+    <td width="32">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R325.00</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="24" id="clickToSee"><h6>Click to see hamper</h6></td>
+    <td id="minusProdQuant">&nbsp;</td>
+    <td id="prodCounter">&nbsp;</td>
+    <td id="plusProdQuant">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="3">&nbsp;</td>
+    <td>Hamper 2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="3">&nbsp;</td>
+    <td>Hamper 3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  
+</table>
+
+  
+  
+  
+  
+  </div>
+  
+
+
+<!---------------------------->  
+<div class="BottomButtons" id="bottomButtons">
+  
+  	<div class="AddToOrder" id="addToOrder">
+    
+    <!-- ////  THIS BUTTON WILL UPDATE VIEW ORDER ///// -->
+   	  <input name="AddToOrderButton" type="submit" value="Add to order" class="AddToOrderButton">
+    </div><!-- AddToOrder div -->
+    
+    
+    
+    <!-- ////  THIS BUTTON WILL SHOW THE ORDER DETAIL ///// -->
+  <div class="ViewOrder" id="viewOrder">
+    	<input name="ViewOrderButton" type="submit" value="View order" class="ViewOrderButton">
+    </div><!-- ViewOrder div -->
+    
+    
+</div><!--BottomButtons div -->
+  <!--//////////////////////////////////////////////////--> 
+
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+
+<script src="/bootstrap/js/jquery-3.1.1.min.js"></script>
+<script src="/scripts/ShoppingCart/Template.js"></script>
+<script src="/bootstrap/js/mustache.js"></script>
+<script src="/www/bootstrap/js/jquery.mobile-1.4.5/" type="text/javascript"></script>
+<script src="/www/bootstrap/js/jquery-1.6.4.js" type="text/javascript"></script>
+<script src="/www/scripts/ShoppingCart/incrementing.js"></script>
+</div> <!--Page div -->
+</body>
+</html>

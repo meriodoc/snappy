@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <!--        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/cam.css">
+
+    <title>Snap Snippety Capture</title>
+    <style>button{background:#333;color:#fff;border-radius:10px;border:2px #666 solid;padding:5px 10px;}</style>
+    <script type="text/javascript">
+        function takePicture() {
+            navigator.device.capture.captureImage(captureSuccess, captureError{limit 2);
+        }
+        // To upload multiple images
+        function captureSuccess(mediaFiles) {
+            var i, len;
+            for (i = 0, len = mediaFiles.length; i < len; i+=1){
+                uploadFile(mediaFiles[i]);
+            }
+        }
+        // Error handling
+        function captureError(error) {
+            var errMsg = 'An error has occured' + error.code;
+            // Use device's internal errors
+            navigator.notification.alert(errMsg, null, 'Oh No!');
+        }
+
+        // Upload file to remote server
+        function uploadFile(mediaFile) {
+            var ft = new FileTransfer(),
+                path = mediaFile.fullPath,
+                name = mediaFile.name;
+            ft.upload(
+                path,
+                "ftp://paddespo@ftp.paddedcell.co.za/public_html/test/upload/upload.php",
+                function (result) {
+                    console.log('File Upload: Success');
+                }
+                function(error) {
+                    console.log('File upload: Failed!');
+                },
+                        {fileName: name});
+        }
+    </script>
+</head>
+<body>
+    <div class="app">
+        <h1>Snap Snippety Capture</h1>
+        <p>&nbsp;</p>
+        <button onclick="takePhoto();">Take a Photo</button><br />
+        <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Get Photo</button><br />
+        <img style="display:none; width:200px; height:190px;" id="dataImage" src="" /><br />
+        <img style="display:none; width:200px; height:190px;" id="urlImage" src="" />
+
+        <p>&nbsp;</p>
+        <div name="login" class="button" id="login"><span id="login"><a href="geo.html">Login</a></span></div>
+        <div name="map" class="button" id="map"><span id="map"><a href="Map.html">Map</a></span></div>
+        <div name="snippy" class="button" id="snippy"><span id="snippy"><a href="snippy.html">snippy</a></span></div>
+        <div name="geosnip" class="button" id="geosnip"><span id="geosnip"><a href="geosnip.html">geosnip</a></span></div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/cam.js"></script>
+</body>
+</html>

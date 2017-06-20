@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <!--        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!--<meta name="msapplication-tap-highlight" content="no"> -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <!-- <link rel="stylesheet" type="text/css" href="css/geonew.css"> -->
+
+    <title>geonew</title>
+    <style>
+        html{height:100%;}
+        body{height:100%;margin:0;padding:0;}
+        #map_placer{height:100%;width:100%;}
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjxk1Mzkzd1KNvc52l-aVEMVTXELgLq-A&sensor=true"></script>
+    <script type="text/javascript">
+        // Wait for cordova to load
+        document.addEventListener("deviceready", onDeviceReady, false);
+        // Cordova is ready
+        function onDeviceReady() {
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        }
+
+        function onSuccess(position) {
+
+            var latLng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+
+            // Map options - JSON object
+            var mapOptions = {
+                center: latLng,
+                panControl: false,
+                zoomControl: true,
+                zoom: 16,
+                mapTypeId: google.maps.mapTypeId.ROADMAP
+            };
+            var mapContent = document.getElementById('map_placer');
+            var map = new google.maps.Map(mapContent,mapOptions);
+            var marker = new google.maps.Marker({position:latLng,map:map});
+        }
+
+        // Create the Error callback function
+        function onError(error) {
+            var errString = '';
+            if (error.code) {
+                switch (error.code) {
+                    // When permission is declined by user
+                    case 1:
+                        errString = 'Can not fetch the location because you did not give permission';
+                        break;
+                    // No reception
+                    case 2:
+                        errString = 'The Location can not be determined - No signal.';
+                        break;
+                    // Timeout
+                    case 3:
+                        errString = 'There was a time out';
+                        break;
+                    // Unknown Error
+                    default:
+                        errString = 'Unknown error';
+                        break
+                }
+            }
+            var element = document.getElementById('map_placer');
+            element.innerHTML = errString;
+        }	
+       
+    </script>
+</head>
+<body>
+    <h1>Geo New</h1>
+    <div id="map_placer"></div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <!-- <script type="text/javascript" src="scripts/geonew.js"></script> -->
+</body>
+</html>

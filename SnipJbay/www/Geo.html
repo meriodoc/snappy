@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+-->        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="css/geo.css">
+
+</head>
+
+<body>
+<!--<div name="button" value="button" type="submit" id="GetLocation" class="button" >Get Location</div>-->
+<div class="button">
+	<div class="Element">
+  		<input name="get_location" type="submit" class="button2" id="get_location" value="Get My Location">
+</div>
+<div>
+	<p></p> 
+</div>
+<div class="Element">
+    <div id="map">
+    	<iframe id="google_map" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk?output=embed"></iframe>
+     </div>
+</div>
+<div>
+	<p></p> 
+</div>
+<div class="Element2">
+	<a href="geosnip.html"><span class="Element2">
+<input name="get_snip_location" type="button" class="button" id="get_snip_location" value="Geo Snippety">
+</span></a>
+</div>
+</div>
+
+
+</body>
+	<script>
+    
+    var c = function(pos){
+    	var lat = pos.coords.latitude,
+        	long = pos.coords.longitude,
+            coords = lat + ',' + long;
+            
+    document.getElementById('google_map').setAttribute('src','https://maps.google.co.uk?q='+ coords +'&z=17&output=embed');
+    }
+    
+    	document.getElementById('get_location').onclick= function() {
+        	navigator.geolocation.getCurrentPosition(c);
+            return false;
+        }
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+</body>
+</html>
